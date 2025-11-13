@@ -1,13 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TododList</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+  </head>
+  <body>
     <div id="container">
-        
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="my-project-bar">
+          <h2>My Projects</h2>
+          <button id="addProjectBtn" class="add-new-project-btn">Add Project</button>
+        </div>
+        <div class="project-list" id="projectList"></div>
+      </aside>
+
+      <!-- Main Content -->
+      <main id="content">
+        <div class="content-header">
+          <h1 class="project-title" id="currentProjectTitle">Inbox</h1>
+          <button id="addTodoBtn" class="add-todo-btn">+ Add Task</button>
+        </div>
+        <hr />
+        <div class="todo-list" id="todoList"></div>
+      </main>
     </div>
-</body>
+
+    <!-- TODO MODAL -->
+    <dialog id="todoDialog">
+      <form id="todoForm" class="modal-form">
+        <h2>Add a new Task</h2>
+
+        <label for="todoTitle">Title</label>
+        <input type="text" id="todoTitle" placeholder="e.g., Read a book" required />
+
+        <label for="todoDesc">Description</label>
+        <textarea id="todoDesc" placeholder="Add a short description..."></textarea>
+
+        <div class="date-priority">
+          <div>
+            <label for="todoDate">Due Date</label>
+            <input type="date" id="todoDate" required />
+          </div>
+          <div>
+            <label for="todoPriority">Priority</label>
+            <select id="todoPriority">
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-buttons">
+          <button type="submit" class="save-btn">Save Task</button>
+          <button type="button" id="cancelTodoBtn" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- PROJECT MODAL -->
+    <dialog id="projectDialog">
+      <form id="projectForm" class="modal-form">
+        <h2>Add a New Project</h2>
+
+        <label for="projectTitle">Project Name</label>
+        <input type="text" id="projectTitle" placeholder="e.g., School Work" required />
+
+        <div class="modal-buttons">
+          <button type="submit" class="save-btn">Save Project</button>
+          <button type="button" id="cancelProjectBtn" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
 </html>
